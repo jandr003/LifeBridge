@@ -103,7 +103,7 @@ export default function Navbar() {
 				<a className="relative z-10 inline-flex h-10 w-28 items-center" href="#home">
 					<img
 						alt="LifeBridge logo"
-						className="absolute left-0 top-1/2 h-48 w-auto -translate-y-1/2 object-contain sm:h-56"
+						className="absolute left-0 top-1/2 h-56 w-auto -translate-y-1/2 object-contain sm:h-64"
 						src={logo}
 					/>
 				</a>
