@@ -101,11 +101,9 @@ export default function Navbar() {
 		<header className="sticky top-0 z-50 bg-white/90 backdrop-blur [&_a]:no-underline">
 			<div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 				<a className="relative z-10 inline-flex h-10 w-28 items-center" href="#home">
-					<img
-						alt="LifeBridge logo"
-						className="absolute left-0 top-1/2 h-56 w-auto -translate-y-1/2 object-contain sm:h-64"
-						src={logo}
-					/>
+					<span className="absolute left-0 top-1/2 h-20 w-64 -translate-y-1/2 overflow-hidden sm:h-24 sm:w-72">
+						<img alt="LifeBridge logo" className="h-auto w-full" src={logo} />
+					</span>
 				</a>
 
 				<nav className="hidden items-center gap-6 lg:flex" aria-label="Main Navigation">
