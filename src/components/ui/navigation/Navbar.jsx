@@ -102,7 +102,7 @@ export default function Navbar() {
 			<div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
 				<a className="relative z-10 inline-flex h-10 w-28 items-center" href="#home">
 					<span className="absolute left-0 top-1/2 h-20 w-64 -translate-y-1/2 overflow-hidden sm:h-24 sm:w-72">
-						<img alt="LifeBridge logo" className="h-auto w-full" src={logo} />
+						<img alt="LifeBridge logo" className="relative -top-20 h-auto w-full sm:-top-24" src={logo} />
 					</span>
 				</a>
 
