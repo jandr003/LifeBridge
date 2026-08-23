@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { navLinks } from "../../../data/navigation/navLinks";
+import logo from "../../../assets/images/APPWEBSITE LOGO.png";
 
 const SEARCH_ITEMS = ["Home", "About Us", "Our Services", "Team", "Blog", "Contact"];
 
@@ -99,8 +100,8 @@ export default function Navbar() {
 	return (
 		<header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur">
 			<div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-				<a className="text-xl font-black tracking-tight text-slate-900" href="#home">
-					LOGO
+				<a className="inline-flex items-center" href="#home">
+					<img alt="LifeBridge logo" className="h-10 w-auto object-contain" src={logo} />
 				</a>
 
 				<nav className="hidden items-center gap-6 lg:flex" aria-label="Main Navigation">
