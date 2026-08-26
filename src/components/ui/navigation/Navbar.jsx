@@ -130,10 +130,10 @@ export default function Navbar() {
 					</button>
 
 					<a
-						className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-700"
+						className="rounded-lg bg-[#0088FF] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0075DB]"
 						href="#contact"
 					>
-						Contact
+						Contact Us
 					</a>
 				</div>
 
@@ -207,11 +207,11 @@ export default function Navbar() {
 							</a>
 						))}
 						<a
-							className="mt-2 rounded-full bg-slate-900 px-4 py-2 text-center text-sm font-semibold text-white transition hover:bg-slate-700"
+								className="mt-2 rounded-lg bg-[#0088FF] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#0075DB]"
 							href="#contact"
 							onClick={() => setIsMenuOpen(false)}
 						>
-							Contact
+								Contact Us
 						</a>
 					</nav>
 				</div>
