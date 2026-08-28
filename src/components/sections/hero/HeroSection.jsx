@@ -44,7 +44,7 @@ export default function HeroSection() {
 						</div>
 					</div>
 
-					<div className="relative z-0 w-full min-w-0 mt-8 lg:mt-28 lg:-translate-x-24 lg:self-start">
+					<div className="relative z-0 w-full min-w-0 mt-8 lg:mt-36 lg:-translate-x-24 lg:self-start">
 						<div className="overflow-hidden rounded-[2rem] bg-white">
 							<img src={heroImage} alt="Doctor checking patient's blood pressure" className="block h-auto w-full object-cover" />
 						</div>
