@@ -3,7 +3,7 @@ import heroImageSmall from "../../../assets/images/LifeBridge-2nd-image.png";
 
 export default function HeroSection() {
 	return (
-		<section id="home" className="overflow-x-hidden px-4 pb-24 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
+		<section id="home" className="px-4 pb-24 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
 			<div className="mx-auto max-w-6xl">
 				<div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-2 [&>*]:min-w-0">
 
@@ -37,15 +37,15 @@ export default function HeroSection() {
 							</a>
 						</div>
 
-						<div className="relative z-10 mt-10 w-full max-w-[19rem]">
-							<div className="overflow-hidden rounded-[2rem] bg-white shadow-xl">
+						<div className="relative z-10 mt-10 w-full max-w-[24rem] lg:max-w-[26rem]">
+							<div className="overflow-hidden rounded-[2rem] bg-white">
 								<img src={heroImageSmall} alt="Healthcare team with a patient" className="block h-auto w-full object-cover" />
 							</div>
 						</div>
 					</div>
 
-					<div className="relative z-0 w-full min-w-0 mt-8 lg:mt-36 lg:-translate-x-24 lg:self-start">
-						<div className="overflow-hidden rounded-[2rem] bg-white">
+					<div className="relative z-0 w-full min-w-0 mt-16 lg:mt-[252px] lg:-translate-x-24 lg:self-start lg:h-[500px]">
+						<div className="overflow-hidden rounded-[2rem] bg-white lg:absolute lg:top-0 lg:left-0 lg:w-[44rem]">
 							<img src={heroImage} alt="Doctor checking patient's blood pressure" className="block h-auto w-full object-cover" />
 						</div>
 					</div>

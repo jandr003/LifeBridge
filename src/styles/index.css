@@ -8,8 +8,11 @@ html {
 	scroll-behavior: smooth;
 }
 
+html, body {
+	overflow-x: hidden;
+}
+
 body {
 	margin: 0;
 	font-family: "Montserrat";
 }
-
