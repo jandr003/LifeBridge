@@ -15,11 +15,12 @@ export default function HeroSection() {
 							Welcome to
 							<br />
 							LifeBridge{" "}
+							Healthcar
 							<span className="relative inline-block">
-								Healthcare
+								e
 								<span
 									aria-hidden="true"
-									className="absolute -right-4 -top-3 text-lg font-normal leading-none text-[#0088FF] sm:-right-5 sm:-top-4 sm:text-xl"
+									className="absolute -right-2 -top-1 rotate-12 text-2xl font-normal leading-none text-[#0088FF] sm:-right-3 sm:-top-2 sm:text-3xl"
 								>
 									✦
 								</span>
