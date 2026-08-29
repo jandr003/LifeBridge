@@ -8,7 +8,10 @@ export default function HeroSection() {
 				<div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-2 [&>*]:min-w-0">
 
 					<div className="relative z-20 pt-8 lg:pt-12 lg:scale-110 lg:origin-top-left">
-						<h1 className="text-3xl font-extrabold leading-[1.15] tracking-tight text-[#1D2950] sm:text-4xl lg:text-[2.75rem]">
+						<h1 
+							className="text-3xl font-extrabold tracking-tight text-[#1D2950] sm:text-4xl lg:text-[3.25rem]"
+							style={{ lineHeight: 1.05 }}
+						>
 							Welcome to
 							<br />
 							LifeBridge{" "}
@@ -23,7 +26,7 @@ export default function HeroSection() {
 							</span>
 						</h1>
 
-						<p className="relative z-30 mt-6 text-base font-bold leading-7 text-[#7783A1] sm:text-base sm:leading-8">
+						<p className="relative z-30 mt-6 text-lg font-bold leading-7 text-[#7783A1] sm:text-lg sm:leading-8">
 							Our healthcare team provides comprehensive, patient-centered care combining expertise and compassion tailored to your needs.
 						</p>
 
@@ -44,7 +47,7 @@ export default function HeroSection() {
 						</div>
 					</div>
 
-					<div className="relative z-0 w-full min-w-0 mt-16 lg:mt-[252px] lg:-translate-x-24 lg:self-start lg:h-[500px]">
+					<div className="relative z-0 w-full min-w-0 mt-16 lg:mt-[138px] lg:-translate-x-24 lg:self-start lg:h-[500px]">
 						<div className="overflow-hidden rounded-[2rem] bg-white lg:absolute lg:top-0 lg:left-0 lg:w-[44rem]">
 							<img src={heroImage} alt="Doctor checking patient's blood pressure" className="block h-auto w-full object-cover" />
 						</div>
