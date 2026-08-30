@@ -29,7 +29,7 @@ export default function HeroSection() {
 									</span>
 								</h1>
 
-								<p className="relative z-30 mt-6 text-base font-normal leading-7 text-[#7783A1] sm:text-base sm:leading-7">
+								<p className="relative z-30 mt-6 text-base font-normal leading-7 text-[#1D2950] sm:text-base sm:leading-7">
 									Our healthcare team provides comprehensive, patient-centered care combining expertise and compassion tailored to your needs.
 								</p>
 
@@ -60,9 +60,9 @@ export default function HeroSection() {
 				</div>
 			</section>
 
-			<section className="border-y border-gray-200 bg-white">
+			<section className="bg-white">
 				<div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-					<p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#7783A1]">
+					<p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#1D2950]">
 						Trusted by leading healthcare partners
 					</p>
 
@@ -70,8 +70,12 @@ export default function HeroSection() {
 
 						<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
 							<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-								<circle cx="12" cy="12" r="10" fill="#1D2950" />
-								<path d="M12 5v14M5 12h14" stroke="#fff" strokeWidth="1.6" />
+								<circle cx="12" cy="12" r="10.5" fill="none" stroke="#1D2950" strokeWidth="1.2" />
+								<path d="M6 15c2-1.5 4-1.5 6 0s4 1.5 6 0" stroke="#F5B400" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+								<path d="M6 17c2-1.5 4-1.5 6 0s4 1.5 6 0" stroke="#0088FF" strokeWidth="1.8" strokeLinecap="round" fill="none" />
+								<path d="M9 6h6l-0.7 8.5c-0.1 1-1 1.5-2.3 1.5s-2.2-0.5-2.3-1.5L9 6Z" fill="#E4222C" />
+								<path d="M12 7.4v6" stroke="#fff" strokeWidth="1" />
+								<circle cx="12" cy="9" r="1" fill="#fff" />
 							</svg>
 							<span className="font-serif text-lg font-semibold tracking-tight text-[#1D2950]">
 								St. Luke's <span className="font-normal text-gray-400">Medical</span>
@@ -79,8 +83,19 @@ export default function HeroSection() {
 						</div>
 
 						<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
-							<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-								<path d="M12 21s-7-4.35-9.5-8.8C.7 8.6 2.6 5 6.2 5c2 0 3.4 1.1 4.3 2.4C11.4 6.1 12.8 5 14.8 5c3.6 0 5.5 3.6 3.7 7.2C16 16.65 12 21 12 21z" fill="#0088FF" />
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<defs>
+									<linearGradient id="medicareplusGradient" x1="2" y1="18" x2="22" y2="4" gradientUnits="userSpaceOnUse">
+										<stop offset="0%" stopColor="#F5484B" />
+										<stop offset="45%" stopColor="#FF9A3D" />
+										<stop offset="75%" stopColor="#3DBEEF" />
+										<stop offset="100%" stopColor="#2E6FE0" />
+									</linearGradient>
+								</defs>
+								<path
+									d="M21 4c-3.5 1-6.5 3-8.5 6.5C11 13 9 15 6 16c3.2.4 6-.4 8.3-2.3-2 2.6-5 4.3-8.3 4.8 3.8.8 7.6-.2 10.4-2.6C18.8 13.8 20.5 9.5 21 4Z"
+									fill="url(#medicareplusGradient)"
+								/>
 							</svg>
 							<span className="text-lg font-extrabold text-[#1D2950]">
 								medicare<span className="font-normal text-[#0088FF]">plus</span>
@@ -88,9 +103,12 @@ export default function HeroSection() {
 						</div>
 
 						<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-								<rect x="4" y="10" width="6" height="10" rx="1" fill="#1D2950" />
-								<rect x="14" y="4" width="6" height="16" rx="1" fill="#0088FF" />
+							<svg width="20" height="24" viewBox="0 0 24 28" fill="none">
+								<circle cx="16" cy="4" r="3" fill="#1D2950" />
+								<path d="M16 8c-2.8 0-5 2-5 4.5V19h2.2v9h5.6v-9H21v-6.5C21 10 18.8 8 16 8Z" fill="#1D2950" />
+								<circle cx="7" cy="9" r="2.4" fill="#F5B400" />
+								<path d="M7 12.4c-2.2 0-4 1.6-4 3.6V21h1.8v7h4.4v-7H11v-5c0-2-1.8-3.6-4-3.6Z" fill="#F5B400" />
+								<rect x="9.5" y="15" width="2" height="3.5" fill="#1D2950" />
 							</svg>
 							<div className="leading-tight">
 								<div className="text-lg font-bold tracking-tight text-[#1D2950]">PhilHealth</div>
@@ -98,11 +116,13 @@ export default function HeroSection() {
 						</div>
 
 						<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
-							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D2950" strokeWidth="1.6">
-								<path d="M6 3v9a4 4 0 0 0 8 0V3" />
-								<circle cx="18" cy="6" r="2" fill="#1D2950" stroke="none" />
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1D2950" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+								<path d="M5 3v6a3 3 0 0 0 6 0V3" />
+								<path d="M8 12v2a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-1.5" />
+								<circle cx="20" cy="6" r="2" />
+								<circle cx="14" cy="20" r="2" fill="#1D2950" />
 							</svg>
-							<span className="text-lg font-bold tracking-wide text-[#1D2950]">MAXICARE</span>
+							<span className="font-serif text-lg font-bold italic tracking-tight text-[#1D2950]">Maxicare</span>
 						</div>
 
 			
@@ -116,8 +136,15 @@ export default function HeroSection() {
 							</div>
 
 							<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0088FF" strokeWidth="1.6">
-									<path d="M9 2h6M10 2v5l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V2" />
+								<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+									<circle cx="12" cy="13" r="9" fill="#0088FF" />
+									<path d="M12 4a9 9 0 0 0-6.4 15.4A9 9 0 0 0 12 22V4Z" fill="#4CAF50" />
+									<circle cx="12" cy="13" r="9" fill="none" stroke="#0088FF" strokeWidth="1.6" />
+									<rect x="9.8" y="2" width="4.4" height="3.2" rx="0.4" fill="#fff" stroke="#0088FF" strokeWidth="1.2" />
+									<path d="M10.5 5.2 8 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+									<path d="M13.5 5.2 16 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+									<circle cx="8.5" cy="17.5" r="1.6" fill="#fff" stroke="#0088FF" strokeWidth="1" />
+									<path d="M9.5 17.5h7" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
 								</svg>
 								<span className="text-lg font-bold lowercase tracking-tight text-[#1D2950]">
 									healthlink<span className="font-normal text-gray-400">labs</span>

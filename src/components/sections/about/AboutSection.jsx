@@ -58,7 +58,7 @@ export default function AboutSection() {
 							</div>
 							<h3 className="text-base font-bold text-[#1D2950]">Our Mission</h3>
 						</div>
-						<p className="mt-3 text-base leading-7 text-[#7783A1]">
+						<p className="mt-3 text-base leading-7 text-[#1D2950]">
 							To provide accessible healthcare services and dependable medical care that address the needs of our patients.
 						</p>
 					</div>
@@ -73,7 +73,7 @@ export default function AboutSection() {
 							</div>
 							<h3 className="text-base font-bold text-[#1D2950]">Our Vision</h3>
 						</div>
-						<p className="mt-3 text-base leading-7 text-[#7783A1]">
+						<p className="mt-3 text-base leading-7 text-[#1D2950]">
 							To become a trusted healthcare provider known for consistent service, professional standards, and patient satisfaction.
 						</p>
 					</div>
