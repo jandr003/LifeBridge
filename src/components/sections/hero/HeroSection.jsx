@@ -8,48 +8,50 @@ export default function HeroSection() {
 				<div className="mx-auto max-w-6xl">
 					<div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-2 [&>*]:min-w-0">
 
-						<div className="relative z-20 pt-8 lg:pt-12 lg:scale-110 lg:origin-top-left">
-							<h1
-								className="text-3xl font-extrabold tracking-tight text-[#1D2950] sm:text-4xl lg:text-[3.25rem]"
-								style={{ lineHeight: 1.05 }}
-							>
-								Welcome to
-								<br />
-								LifeBridge{" "}
-								Healthcar
-								<span className="relative inline-block">
-									e
-									<span
-										aria-hidden="true"
-										className="absolute -right-2 -top-1 rotate-12 text-2xl font-normal leading-none text-[#0088FF] sm:-right-3 sm:-top-2 sm:text-3xl"
-									>
-										✦
+						<div className="relative z-20 flex flex-col gap-8 pt-8 lg:gap-16 lg:pt-12 lg:scale-110 lg:origin-top-left">
+							<div>
+								<h1
+									className="text-3xl font-extrabold tracking-tight text-[#1D2950] sm:text-4xl lg:text-[3.25rem]"
+									style={{ lineHeight: 1.05 }}
+								>
+									Welcome to
+									<br />
+									LifeBridge{" "}
+									Healthcar
+									<span className="relative inline-block">
+										e
+										<span
+											aria-hidden="true"
+											className="absolute -right-2 -top-1 rotate-12 text-2xl font-normal leading-none text-[#0088FF] sm:-right-3 sm:-top-2 sm:text-3xl"
+										>
+											✦
+										</span>
 									</span>
-								</span>
-							</h1>
+								</h1>
 
-							<p className="relative z-30 mt-6 text-lg font-bold leading-7 text-[#7783A1] sm:text-lg sm:leading-8">
-								Our healthcare team provides comprehensive, patient-centered care combining expertise and compassion tailored to your needs.
-							</p>
+								<p className="relative z-30 mt-6 text-base font-normal leading-7 text-[#7783A1] sm:text-base sm:leading-7">
+									Our healthcare team provides comprehensive, patient-centered care combining expertise and compassion tailored to your needs.
+								</p>
 
-							<div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
-								<a href="#services" className="inline-flex min-w-[11rem] items-center justify-center whitespace-nowrap rounded-xl bg-[#0088FF] px-8 py-3.5 text-base font-semibold text-white transition hover:bg-[#0075DB]">
-									View Services
-								</a>
+								<div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
+									<a href="#services" className="inline-flex min-w-[11rem] items-center justify-center whitespace-nowrap rounded-xl bg-[#0088FF] px-8 py-3.5 text-base font-semibold text-white transition hover:bg-[#0075DB]">
+										View Services
+									</a>
 
-								<a href="#contact" className="inline-flex min-w-[15rem] items-center justify-center whitespace-nowrap rounded-xl border-2 border-[#0BE7FF] px-8 py-3.5 text-base font-semibold text-[#00CCE5] transition hover:bg-[#0BE7FF]/10">
-									Book an Appointment
-								</a>
+									<a href="#contact" className="inline-flex min-w-[15rem] items-center justify-center whitespace-nowrap rounded-xl border-2 border-[#0BE7FF] px-8 py-3.5 text-base font-semibold text-[#00CCE5] transition hover:bg-[#0BE7FF]/10">
+										Book an Appointment
+									</a>
+								</div>
 							</div>
 
-							<div className="relative z-10 mt-10 w-full max-w-[24rem] lg:max-w-[26rem]">
+							<div className="relative z-10 w-full max-w-[24rem] lg:max-w-[26rem]">
 								<div className="overflow-hidden rounded-[2rem] bg-white">
 									<img src={heroImageSmall} alt="Healthcare team with a patient" className="block h-auto w-full object-cover" />
 								</div>
 							</div>
 						</div>
 
-						<div className="relative z-0 w-full min-w-0 mt-16 lg:mt-[138px] lg:-translate-x-24 lg:self-start lg:h-[500px]">
+						<div className="relative z-0 w-full min-w-0 mt-16 lg:mt-[124px] lg:-translate-x-24 lg:self-start lg:h-[500px]">
 							<div className="overflow-hidden rounded-[2rem] bg-white lg:absolute lg:top-0 lg:left-0 lg:w-[44rem]">
 								<img src={heroImage} alt="Doctor checking patient's blood pressure" className="block h-auto w-full object-cover" />
 							</div>
@@ -103,7 +105,7 @@ export default function HeroSection() {
 							<span className="text-lg font-bold tracking-wide text-[#1D2950]">MAXICARE</span>
 						</div>
 
-						{/* Grouped so these two always stay together and wrap as one unit */}
+			
 						<div className="flex items-center gap-x-10 gap-y-6">
 							<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
 								<svg width="20" height="20" viewBox="0 0 24 24" fill="none">

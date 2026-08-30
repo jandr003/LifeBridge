@@ -45,36 +45,45 @@ export default function ServicesSection() {
 	];
 
 	return (
-		<section id="services" className="px-4 py-20 sm:px-6 lg:px-8">
-			<div className="mx-auto max-w-6xl">
+		<section id="services" className="px-4 py-32 sm:px-10 lg:px-16">
+			<div className="mx-auto max-w-[1440px]">
 
 				<div className="mx-auto max-w-2xl text-center">
-					<span className="inline-block rounded-full bg-[#0088FF]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#0088FF]">
-						What We Offer
-					</span>
-					<h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[#1D2950] sm:text-4xl">
+					<h2 className="text-3xl font-extrabold tracking-tight text-[#1D2950] sm:text-5xl" style={{ lineHeight: 1.1 }}>
 						Our Healthcare Services
 					</h2>
-					<p className="mt-4 leading-7 text-[#7783A1]">
+					<p className="mx-auto mt-4 max-w-lg leading-7 text-[#7783A1]">
 						From routine checkups to specialized treatment, LifeBridge offers a full range of medical services built around your needs.
 					</p>
 				</div>
 
-				<div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+				<div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 					{services.map((service) => (
 						<div
 							key={service.title}
-							className="rounded-2xl bg-[#0088FF] p-7 transition hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(0,136,255,0.5)]"
+							className="group rounded-2xl bg-[#0088FF]/30 p-8 transition hover:-translate-y-1.5 hover:bg-[#0088FF] hover:shadow-[0_20px_50px_-25px_rgba(0,136,255,0.5)]"
 						>
-							<div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/15 text-white">
+							<div className="flex h-12 w-12 items-center justify-center rounded-xl bg-white/50 text-[#0088FF] transition group-hover:bg-white/20 group-hover:text-white">
 								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
 									{service.icon}
 								</svg>
 							</div>
-							<h3 className="mt-5 text-lg font-bold text-white">{service.title}</h3>
-							<p className="mt-2 leading-6 text-white/80">{service.desc}</p>
-							<a href="#contact" className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-white transition hover:gap-2">
-								Learn more <span aria-hidden="true">→</span>
+
+							<h3 className="mt-5 text-lg font-bold text-[#1D2950] transition group-hover:text-white">
+								{service.title}
+							</h3>
+							<p className="mt-2 leading-6 text-[#1D2950]/70 transition group-hover:text-white/85">
+								{service.desc}
+							</p>
+
+							<a
+								href="#contact"
+								className="mt-5 inline-flex w-fit items-center gap-0.5 border-b-2 border-[#0088FF] pb-1 text-sm font-bold tracking-wide text-[#0088FF] transition group-hover:gap-1 group-hover:border-white group-hover:text-white"
+							>
+								Learn more
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+									<path d="M5 12h14M13 6l6 6-6 6" />
+								</svg>
 							</a>
 						</div>
 					))}
