@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { navLinks } from "../../../data/navigation/navLinks";
 import logo from "../../../assets/images/APPWEBSITE LOGO.png";
 
@@ -60,53 +60,78 @@ export default function Navbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [searchValue, setSearchValue] = useState("");
-	const [submittedTerm, setSubmittedTerm] = useState("");
+	const [notFound, setNotFound] = useState(false);
+	const searchInputRef = useRef(null);
 
 	const searchResults = useMemo(() => {
-		const term = submittedTerm.trim().toLowerCase();
+		const term = searchValue.trim().toLowerCase();
 		if (!term) return [];
-
 		return SEARCH_ITEMS.filter((item) => item.toLowerCase().includes(term));
-	}, [submittedTerm]);
+	}, [searchValue]);
 
-	const handleSearchToggle = () => {
-		setIsSearchOpen((prev) => {
-			if (prev && !searchValue.trim()) {
-				setSubmittedTerm("");
-			}
-			return !prev;
-		});
+	const findMatchingLink = (label) => {
+		return navLinks.find(
+			(link) => link.label.toLowerCase() === label.toLowerCase()
+		);
 	};
 
-	const handleSearchSubmit = (event) => {
-		event.preventDefault();
-		const trimmed = searchValue.trim();
+	const goToResult = (label) => {
+		const match = findMatchingLink(label);
+		if (match?.href) {
+			window.location.hash = match.href.replace("#", "");
+		}
+		closeSearch();
+	};
 
-		if (!trimmed) {
-			setSubmittedTerm("");
-			setIsSearchOpen(false);
+	const closeSearch = () => {
+		setIsSearchOpen(false);
+		setSearchValue("");
+		setNotFound(false);
+	};
+
+	const handleIconClick = () => {
+		if (!isSearchOpen) {
+			setIsSearchOpen(true);
+			setTimeout(() => searchInputRef.current?.focus(), 250);
 			return;
 		}
 
-		setSubmittedTerm(trimmed);
+		if (!searchValue.trim()) {
+			closeSearch();
+			return;
+		}
+
+		if (searchResults.length > 0) {
+			goToResult(searchResults[0]);
+		} else {
+			setNotFound(true);
+		}
 	};
 
-	const handleSearchBlur = () => {
-		if (!searchValue.trim() && !submittedTerm.trim()) {
-			setIsSearchOpen(false);
+	const handleKeyDown = (e) => {
+		if (e.key === "Enter") {
+			e.preventDefault();
+			handleIconClick();
+		}
+		if (e.key === "Escape") {
+			closeSearch();
 		}
 	};
 
 	return (
 		<header className="sticky top-0 z-50 bg-white/90 backdrop-blur [&_a]:no-underline">
-			<div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-				<a className="relative z-10 inline-flex h-10 w-28 items-center" href="#home">
-					<span className="absolute left-0 top-1/2 h-12 w-40 -translate-y-1/2 overflow-hidden sm:h-14 sm:w-44">
-						<img alt="LifeBridge logo" className="relative -top-12 h-auto w-full sm:-top-14" src={logo} />
-					</span>
+			<div className="relative mx-auto flex h-20 max-w-7xl items-center justify-end px-4 sm:px-6 lg:px-8">
+				<a
+					className="absolute left-4 top-1/2 z-10 flex h-40 -translate-y-1/2 items-center sm:left-6 sm:h-48 lg:left-8"
+					href="#home"
+				>
+					<img alt="LifeBridge logo" className="h-full w-auto object-contain" src={logo} />
 				</a>
 
-				<nav className="hidden items-center gap-6 lg:flex" aria-label="Main Navigation">
+				<nav
+					className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-6 lg:flex"
+					aria-label="Main Navigation"
+				>
 					{navLinks.map((link) => (
 						<a
 							key={link.label}
@@ -119,15 +144,58 @@ export default function Navbar() {
 				</nav>
 
 				<div className="hidden items-center gap-3 lg:flex">
-					<button
-						aria-expanded={isSearchOpen}
-						aria-label={isSearchOpen ? "Close search" : "Open search"}
-						className="rounded-full p-2 text-slate-700 transition hover:bg-slate-100 hover:text-slate-950"
-						onClick={handleSearchToggle}
-						type="button"
-					>
-						{isSearchOpen ? <CloseIcon /> : <SearchIcon />}
-					</button>
+					<div className="flex items-center">
+						<div
+							className={`overflow-hidden transition-all duration-300 ease-out ${
+								isSearchOpen ? "w-44 opacity-100" : "w-0 opacity-0"
+							}`}
+						>
+							<div className="relative mr-2">
+								<input
+									ref={searchInputRef}
+									type="text"
+									value={searchValue}
+									onChange={(e) => {
+										setSearchValue(e.target.value);
+										setNotFound(false);
+									}}
+									onKeyDown={handleKeyDown}
+									placeholder="Search sections..."
+									className="w-44 rounded-full border border-[#E4EAF5] bg-[#F8FAFF] py-2.5 pl-4 pr-10 text-sm text-[#1D2950] placeholder:text-[#A9B4D0] outline-none transition-all focus:border-[#0088FF] focus:bg-white"
+								/>
+
+								{searchValue && searchResults.length > 0 && (
+									<div className="absolute left-0 right-0 top-full mt-2 overflow-hidden rounded-xl border border-[#E4EAF5] bg-white shadow-lg">
+										{searchResults.map((item) => (
+											<button
+												key={item}
+												onMouseDown={() => goToResult(item)}
+												className="block w-full px-4 py-2.5 text-left text-sm text-[#1D2950] transition-colors hover:bg-[#F1F5FB]"
+											>
+												{item}
+											</button>
+										))}
+									</div>
+								)}
+
+								{notFound && (
+									<div className="absolute left-0 right-0 top-full mt-2 rounded-xl border border-[#E4EAF5] bg-white px-4 py-2.5 text-sm text-[#7783A1] shadow-lg">
+										No results found for "{searchValue}".
+									</div>
+								)}
+							</div>
+						</div>
+
+						<button
+							aria-expanded={isSearchOpen}
+							aria-label={isSearchOpen ? "Search" : "Open search"}
+							className="flex h-10 w-10 flex-none items-center justify-center rounded-full text-slate-700 transition hover:bg-slate-100 hover:text-[#0088FF]"
+							onClick={handleIconClick}
+							type="button"
+						>
+							<SearchIcon />
+						</button>
+					</div>
 
 					<a
 						className="rounded-lg bg-[#0088FF] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#0075DB]"
@@ -148,51 +216,6 @@ export default function Navbar() {
 				</button>
 			</div>
 
-			{isSearchOpen && (
-				<div className="mx-auto max-w-7xl px-4 pb-4 sm:px-6 lg:px-8">
-					<form className="flex gap-2" onSubmit={handleSearchSubmit}>
-						<input
-							autoFocus
-							className="w-full rounded-full border border-slate-300 px-4 py-2 text-sm outline-none ring-0 placeholder:text-slate-400 focus:border-slate-500"
-							onBlur={handleSearchBlur}
-							onChange={(event) => {
-								const nextValue = event.target.value;
-								setSearchValue(nextValue);
-
-								if (!nextValue.trim()) {
-									setSubmittedTerm("");
-								}
-							}}
-							placeholder="Search..."
-							type="text"
-							value={searchValue}
-						/>
-						<button
-							className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white transition hover:bg-slate-700"
-							type="submit"
-						>
-							Search
-						</button>
-					</form>
-
-					{submittedTerm && (
-						<div className="mt-3 rounded-2xl border border-slate-200 bg-white p-3 text-sm">
-							{searchResults.length > 0 ? (
-								<ul className="space-y-1">
-									{searchResults.map((item) => (
-										<li key={item} className="text-slate-700">
-											{item}
-										</li>
-									))}
-								</ul>
-							) : (
-								<p className="text-slate-500">No results found for "{submittedTerm}".</p>
-							)}
-						</div>
-					)}
-				</div>
-			)}
-
 			{isMenuOpen && (
 				<div className="border-t border-slate-200 px-4 pb-4 pt-3 lg:hidden">
 					<nav className="flex flex-col gap-2" aria-label="Mobile Navigation">
@@ -207,11 +230,11 @@ export default function Navbar() {
 							</a>
 						))}
 						<a
-								className="mt-2 rounded-lg bg-[#0088FF] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#0075DB]"
+							className="mt-2 rounded-lg bg-[#0088FF] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#0075DB]"
 							href="#contact"
 							onClick={() => setIsMenuOpen(false)}
 						>
-								Contact Us
+							Contact Us
 						</a>
 					</nav>
 				</div>
@@ -219,4 +242,3 @@ export default function Navbar() {
 		</header>
 	);
 }
-

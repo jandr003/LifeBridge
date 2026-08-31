@@ -1,6 +1,11 @@
-export default function CtaSection() {
+import { useState } from "react";
+import BookingModal from "../../ui/modal/BookingModal";
+
+export default function ContactSection() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
 	return (
-		<section className="px-4 pb-16 pt-4 sm:px-6 lg:px-8">
+		<section id="contact" className="px-4 pb-16 pt-4 sm:px-6 lg:px-8">
 			<div
 				className="mx-auto flex w-full max-w-[1280px] flex-col items-center justify-center rounded-3xl bg-[#0088FF] px-6 text-center"
 				style={{ height: "400px" }}
@@ -14,14 +19,22 @@ export default function CtaSection() {
 				</p>
 
 				<div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-					<button className="rounded-lg bg-[#4DE8F5] px-7 py-3 text-sm font-semibold text-[#003A66] shadow-sm shadow-[#4DE8F5]/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 hover:bg-[#2FDCEE] hover:shadow-md hover:shadow-[#4DE8F5]/30 active:scale-95 active:translate-y-0">
+					<a
+						href="#services"
+						className="rounded-lg bg-[#4DE8F5] px-7 py-3 text-sm font-semibold text-[#003A66] shadow-sm shadow-[#4DE8F5]/20 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-105 hover:bg-[#2FDCEE] hover:shadow-md hover:shadow-[#4DE8F5]/30 active:scale-95 active:translate-y-0"
+					>
 						View Services
-					</button>
-					<button className="rounded-lg border-2 border-white px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#0088FF]">
+					</a>
+					<button
+						onClick={() => setIsModalOpen(true)}
+						className="rounded-lg border-2 border-white px-7 py-3 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#0088FF]"
+					>
 						Book an Appointment
 					</button>
 				</div>
 			</div>
+
+			<BookingModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 		</section>
 	);
 }
