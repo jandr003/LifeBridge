@@ -22,11 +22,20 @@ export default function BookingModal({ isOpen, onClose }) {
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		const updatedForm = { ...form, [name]: value };
+		const nextValue = name === "phone" ? value.replace(/[^0-9]/g, "") : value;
+		const updatedForm = { ...form, [name]: nextValue };
 		setForm(updatedForm);
 		if (touched[name]) {
 			const fieldErrors = validateContactForm(updatedForm);
 			setErrors((prev) => ({ ...prev, [name]: fieldErrors[name] }));
+		}
+	};
+
+	const handlePhoneKeyDown = (e) => {
+		const allowedKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab", "Home", "End"];
+		if (allowedKeys.includes(e.key)) return;
+		if (!/^[0-9]$/.test(e.key)) {
+			e.preventDefault();
 		}
 	};
 
@@ -141,8 +150,11 @@ export default function BookingModal({ isOpen, onClose }) {
 									id="modal-phone"
 									name="phone"
 									type="tel"
+									inputMode="numeric"
+									pattern="[0-9]*"
 									value={form.phone}
 									onChange={handleChange}
+									onKeyDown={handlePhoneKeyDown}
 									onBlur={handleBlur}
 									placeholder="0917 123 4567"
 									className={inputClass("phone")}
