@@ -10,15 +10,15 @@ export default function FooterSection() {
 	];
 
 	return (
-		<footer className="border-t border-[#E4EAF5] px-4 py-16 sm:px-6 lg:px-8">
-			<div className="mx-auto grid max-w-7xl gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-				<div>
-					<img src={logo} alt="LifeBridge Healthcare" className="h-48 w-auto" />
+		<footer className="border-t border-[#E4EAF5] px-4 pb-10 pt-0 sm:px-6 sm:pb-16 sm:pt-0 lg:px-8 lg:pt-16">
+			<div className="mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 sm:gap-y-12 lg:grid-cols-4 lg:gap-8">
+				<div className="col-span-2 lg:col-span-1">
+					<img src={logo} alt="LifeBridge Healthcare" className="relative top-3 -mb-4 -mt-12 h-44 w-auto sm:top-4 sm:-mb-6 sm:-mt-16 sm:h-56 lg:top-0 lg:mb-0 lg:mt-0 lg:h-64" />
 				</div>
 
-				<div>
+				<div className="min-w-0">
 					<h3 className="text-base font-bold text-[#1D2950]">LifeBridge Healthcare</h3>
-					<ul className="mt-5 flex flex-col gap-3">
+					<ul className="mt-4 flex flex-col gap-3 sm:mt-5">
 						{companyLinks.map((link) => (
 							<li key={link}>
 								<a href="#" className="text-sm text-[#5B6B8C] transition-colors hover:text-[#0088FF]">
@@ -29,9 +29,9 @@ export default function FooterSection() {
 					</ul>
 				</div>
 
-				<div>
+				<div className="min-w-0">
 					<h3 className="text-base font-bold text-[#1D2950]">Helpful Links</h3>
-					<ul className="mt-5 flex flex-col gap-3">
+					<ul className="mt-4 flex flex-col gap-3 sm:mt-5">
 						{helpfulLinks.map((link) => (
 							<li key={link}>
 								<a href="#" className="text-sm text-[#5B6B8C] transition-colors hover:text-[#0088FF]">
@@ -42,9 +42,9 @@ export default function FooterSection() {
 					</ul>
 				</div>
 
-				<div>
+				<div className="col-span-2 lg:col-span-1">
 					<h3 className="text-base font-bold text-[#1D2950]">LifeBridge Healthcare</h3>
-					<ul className="mt-5 flex flex-col gap-3">
+					<ul className="mt-4 flex flex-col gap-3 sm:mt-5">
 						{hours.map((h) => (
 							<li key={h.day} className="text-sm">
 								<span className="font-semibold text-[#0088FF]">{h.day}:</span>{" "}
@@ -55,7 +55,7 @@ export default function FooterSection() {
 				</div>
 			</div>
 
-			<div className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-[#E4EAF5] pt-6 sm:flex-row">
+			<div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between gap-6 border-t border-[#E4EAF5] pt-6 sm:mt-12 sm:flex-row">
 				<p className="text-xs text-[#A9B4D0]">
 					© {new Date().getFullYear()} LifeBridge. All Rights Reserved
 				</p>

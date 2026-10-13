@@ -4,55 +4,72 @@ import heroImageSmall from "../../../assets/images/LifeBridge-2nd-image.png";
 export default function HeroSection() {
 	return (
 		<>
-			<section id="home" className="px-4 pb-24 pt-8 sm:px-6 lg:px-8 lg:pb-28 lg:pt-14">
-				<div className="mx-auto max-w-6xl">
-					<div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-2 [&>*]:min-w-0">
+			<section id="home" className="px-4 pb-12 pt-8 sm:px-6 sm:pb-16 md:pb-8 min-[900px]:max-[1279px]:pb-2 min-[1024px]:pb-8 xl:px-8 xl:pb-28 xl:pt-14">
+				<div className="mx-auto max-w-6xl md:translate-x-8 xl:translate-x-0">
+					<div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1.05fr_1fr] md:grid-rows-[auto_auto] md:items-end md:gap-x-3 md:gap-y-5 lg:gap-y-10 xl:grid-cols-[1.15fr_1fr] xl:grid-rows-none xl:items-start xl:gap-2 [&>*]:min-w-0">
 
-						<div className="relative z-20 flex flex-col gap-8 pt-8 lg:gap-16 lg:pt-12 lg:scale-110 lg:origin-top-left">
-							<div>
+						<div className="relative z-20 flex flex-col gap-8 pt-8 md:contents xl:flex xl:gap-16 xl:pt-12 xl:scale-110 xl:origin-top-left">
+							<div className="md:relative md:z-20 md:col-start-1 md:row-start-1 md:self-start md:pt-10 xl:static">
 								<h1
-									className="text-3xl font-extrabold tracking-tight text-[#1D2950] sm:text-4xl lg:text-[3.25rem]"
+									className="text-3xl font-extrabold tracking-tight text-[#1D2950] sm:text-4xl md:text-[clamp(1.5rem,3.2vw,2.5rem)] xl:text-[3.25rem]"
 									style={{ lineHeight: 1.05 }}
 								>
 									Welcome to
 									<br />
-									LifeBridge{" "}
-									Healthcar
-									<span className="relative inline-block">
-										e
-										<span
-											aria-hidden="true"
-											className="absolute -right-2 -top-1 rotate-12 text-2xl font-normal leading-none text-[#0088FF] sm:-right-3 sm:-top-2 sm:text-3xl"
-										>
-											✦
+									<span className="md:whitespace-nowrap">
+										LifeBridge{" "}
+										Healthcar
+										<span className="relative inline-block">
+											e
+											<span
+												aria-hidden="true"
+												className="absolute -right-2 -top-1 rotate-12 text-2xl font-normal leading-none text-[#0088FF] sm:-right-3 sm:-top-2 sm:text-3xl"
+											>
+												✦
+											</span>
 										</span>
 									</span>
 								</h1>
 
-								<p className="relative z-30 mt-6 text-base font-normal leading-7 text-[#1D2950] sm:text-base sm:leading-7">
-									Our healthcare team provides comprehensive, patient-centered care combining expertise and compassion tailored to your needs.
+								<p className="relative z-30 mt-6 text-base font-normal leading-7 text-[#1D2950] sm:text-base sm:leading-7 md:max-lg:text-[14px] md:max-lg:leading-6 md:max-[900px]:w-[425px]">
+									<span className="md:max-[799px]:block">Our healthcare team provides comprehensive,</span>{" "}
+									<span className="md:max-[799px]:block">patient-centered care combining expertise and compassion</span>{" "}
+									<span className="md:max-[799px]:block">tailored to your needs.</span>
 								</p>
 
-								<div className="mt-8 flex flex-col items-start gap-4 sm:flex-row">
-									<a href="#services" className="inline-flex min-w-[11rem] items-center justify-center whitespace-nowrap rounded-xl bg-[#0088FF] px-8 py-3.5 text-base font-semibold text-white transition hover:bg-[#0075DB]">
+								<div className="mt-8 flex flex-row items-stretch gap-3 sm:items-start sm:gap-4">
+									<a href="#services" className="inline-flex min-w-0 flex-1 items-center justify-center rounded-xl bg-[#0088FF] px-3 py-3.5 text-center text-sm font-semibold text-white transition hover:bg-[#0075DB] sm:min-w-[11rem] sm:flex-none sm:whitespace-nowrap sm:px-8 sm:text-base md:min-w-0 md:flex-1 md:px-2 md:text-sm md:whitespace-nowrap xl:min-w-[11rem] xl:flex-none xl:px-8 xl:text-base [@media_(min-width:1024px)_and_(max-width:1399px)]:min-w-[9.5rem] [@media_(min-width:1024px)_and_(max-width:1399px)]:flex-none [@media_(min-width:1024px)_and_(max-width:1399px)]:px-5 [@media_(min-width:1024px)_and_(max-width:1399px)]:py-2.5 [@media_(min-width:1024px)_and_(max-width:1399px)]:text-sm">
 										View Services
 									</a>
 
-									<a href="#contact" className="inline-flex min-w-[15rem] items-center justify-center whitespace-nowrap rounded-xl border-2 border-[#0BE7FF] px-8 py-3.5 text-base font-semibold text-[#00CCE5] transition hover:bg-[#0BE7FF]/10">
+									<a href="#contact" className="inline-flex min-w-0 flex-1 items-center justify-center rounded-xl border-2 border-[#0BE7FF] px-3 py-3.5 text-center text-sm font-semibold text-[#00CCE5] transition hover:bg-[#0BE7FF]/10 sm:min-w-[15rem] sm:flex-none sm:whitespace-nowrap sm:px-8 sm:text-base md:min-w-0 md:flex-1 md:bg-white md:px-2 md:text-sm md:whitespace-nowrap lg:bg-transparent xl:min-w-[15rem] xl:flex-none xl:bg-transparent xl:px-8 xl:text-base [@media_(min-width:1024px)_and_(max-width:1399px)]:min-w-[12.75rem] [@media_(min-width:1024px)_and_(max-width:1399px)]:flex-none [@media_(min-width:1024px)_and_(max-width:1399px)]:px-5 [@media_(min-width:1024px)_and_(max-width:1399px)]:py-2.5 [@media_(min-width:1024px)_and_(max-width:1399px)]:text-sm">
 										Book an Appointment
 									</a>
 								</div>
 							</div>
 
-							<div className="relative z-10 w-full max-w-[24rem] lg:max-w-[26rem]">
+							<div className="relative z-10 hidden w-full max-w-[22rem] md:col-start-1 md:row-start-2 md:block md:self-start md:w-[75%] md:max-w-[22rem] md:translate-y-0 xl:col-auto xl:row-auto xl:self-auto xl:w-full xl:max-w-[26rem] xl:translate-y-0">
 								<div className="overflow-hidden rounded-[2rem] bg-white">
 									<img src={heroImageSmall} alt="Healthcare team with a patient" className="block h-auto w-full object-cover" />
 								</div>
 							</div>
 						</div>
 
-						<div className="relative z-0 w-full min-w-0 mt-16 lg:mt-[119px] lg:-translate-x-24 lg:self-start lg:h-[500px]">
-							<div className="overflow-hidden rounded-[2rem] bg-white lg:absolute lg:top-0 lg:left-0 lg:w-[44rem]">
+						<div className="mx-auto flex w-full max-w-md flex-col gap-4 sm:max-w-lg sm:gap-6 md:hidden">
+							<img
+								src={heroImageSmall}
+								alt="Healthcare team with a patient"
+								className="block h-auto w-full"
+							/>
+							<img
+								src={heroImage}
+								alt="Doctor checking patient's blood pressure"
+								className="block h-auto w-full"
+							/>
+						</div>
+
+						<div className="relative z-0 hidden min-w-0 md:col-start-2 md:row-start-2 md:row-span-1 md:block md:w-full md:justify-self-end md:-translate-x-[72px] md:-translate-y-20 md:-top-2 md:-mb-6 md:max-[799px]:w-[120%] md:max-[799px]:-translate-x-9 md:max-[799px]:-translate-y-12 min-[900px]:-translate-y-[120px] lg:w-[calc(100%+1.5rem)] lg:-translate-x-24 lg:-translate-y-48 lg:top-0 lg:-mb-48 xl:col-auto xl:row-auto xl:row-span-1 xl:self-start xl:mt-[160px] xl:mb-0 xl:w-full xl:-translate-x-24 xl:translate-y-0 xl:h-[500px]">
+							<div className="overflow-hidden rounded-[2rem] bg-white md:w-full xl:absolute xl:top-0 xl:left-0 xl:w-[40rem] 2xl:w-[44rem]">
 								<img src={heroImage} alt="Doctor checking patient's blood pressure" className="block h-auto w-full object-cover" />
 							</div>
 						</div>
@@ -61,7 +78,7 @@ export default function HeroSection() {
 			</section>
 
 			<section className="bg-white">
-				<div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
+				<div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8 min-[900px]:max-[1279px]:-translate-y-8 min-[1024px]:translate-y-0">
 					<p className="mb-8 text-center text-xs font-semibold uppercase tracking-[0.25em] text-[#1D2950]">
 						Trusted by leading healthcare partners
 					</p>
@@ -125,31 +142,28 @@ export default function HeroSection() {
 							<span className="font-serif text-lg font-bold italic tracking-tight text-[#1D2950]">Maxicare</span>
 						</div>
 
-			
-						<div className="flex items-center gap-x-10 gap-y-6">
-							<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
-								<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-									<rect x="9" y="2" width="6" height="20" rx="1" fill="#E4222C" />
-									<rect x="2" y="9" width="20" height="6" rx="1" fill="#E4222C" />
-								</svg>
-								<span className="font-serif text-lg font-semibold italic text-[#1D2950]">Red Cross PH</span>
-							</div>
+						<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+								<rect x="9" y="2" width="6" height="20" rx="1" fill="#E4222C" />
+								<rect x="2" y="9" width="20" height="6" rx="1" fill="#E4222C" />
+							</svg>
+							<span className="font-serif text-lg font-semibold italic text-[#1D2950]">Red Cross PH</span>
+						</div>
 
-							<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
-								<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-									<circle cx="12" cy="13" r="9" fill="#0088FF" />
-									<path d="M12 4a9 9 0 0 0-6.4 15.4A9 9 0 0 0 12 22V4Z" fill="#4CAF50" />
-									<circle cx="12" cy="13" r="9" fill="none" stroke="#0088FF" strokeWidth="1.6" />
-									<rect x="9.8" y="2" width="4.4" height="3.2" rx="0.4" fill="#fff" stroke="#0088FF" strokeWidth="1.2" />
-									<path d="M10.5 5.2 8 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
-									<path d="M13.5 5.2 16 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
-									<circle cx="8.5" cy="17.5" r="1.6" fill="#fff" stroke="#0088FF" strokeWidth="1" />
-									<path d="M9.5 17.5h7" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
-								</svg>
-								<span className="text-lg font-bold lowercase tracking-tight text-[#1D2950]">
-									healthlink<span className="font-normal text-gray-400">labs</span>
-								</span>
-							</div>
+						<div className="flex items-center gap-2 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0">
+							<svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+								<circle cx="12" cy="13" r="9" fill="#0088FF" />
+								<path d="M12 4a9 9 0 0 0-6.4 15.4A9 9 0 0 0 12 22V4Z" fill="#4CAF50" />
+								<circle cx="12" cy="13" r="9" fill="none" stroke="#0088FF" strokeWidth="1.6" />
+								<rect x="9.8" y="2" width="4.4" height="3.2" rx="0.4" fill="#fff" stroke="#0088FF" strokeWidth="1.2" />
+								<path d="M10.5 5.2 8 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+								<path d="M13.5 5.2 16 14" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+								<circle cx="8.5" cy="17.5" r="1.6" fill="#fff" stroke="#0088FF" strokeWidth="1" />
+								<path d="M9.5 17.5h7" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" />
+							</svg>
+							<span className="text-lg font-bold lowercase tracking-tight text-[#1D2950]">
+								healthlink<span className="font-normal text-gray-400">labs</span>
+							</span>
 						</div>
 
 					</div>
