@@ -9,9 +9,7 @@
 
 **Live Demo:** [life-bridge-phi.vercel.app](https://life-bridge-phi.vercel.app)
 
-LifeBridge is a healthcare website where visitors can explore medical services, meet the care team, read patient testimonials and articles, find answers to common questions, and access appointment and contact information.
-
-The website brings essential healthcare information together in a responsive, easy-to-navigate experience.
+LifeBridge is a digital healthcare platform that connects visitors with care information and appointment resources.
 
 ## Features
 
@@ -62,14 +60,10 @@ LifeBridge is designed for phones, tablets, and desktop screens. Its navigation,
 
 ## Project Purpose
 
-LifeBridge helps visitors find and explore healthcare information in one place, including services, care team details, patient experiences, appointment requests, and contact resources.
-
-## Development
-
-The frontend is built with React and JavaScript. Vite powers the local development server and production builds, Tailwind CSS provides the styling system, and Lucide React supplies interface icons.
+LifeBridge makes it easier for people to learn about available care and take the next step toward an appointment.
 
 ## Development Status
 
 **Completed and Deployed**
 
-LifeBridge is a completed healthcare website project and is available through the live demo.
+The site brings healthcare services, care-team information, patient stories, and appointment requests together in one place.
